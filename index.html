@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thundercode (Parvez Hasan) — Developer</title>
+<meta name="description" content="Parvez Hasan, aka Thundercode — a self-taught developer six months into coding, building in Python, Java, Kotlin and C, with the latest project release pulled straight from GitHub.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://shadow-zx.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thundercode (Parvez Hasan) — Developer">
+<meta property="og:description" content="Six months into code. Latest release, tools, and contact links.">
+<meta property="og:url" content="https://shadow-zx.github.io/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0b0d'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' font-weight='700' fill='%23c8102e' text-anchor='middle'%3E&gt;_%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0b0b0d;
+    --ink-raised:#161317;
+    --ink-line:#2a2226;
+    --crimson:#c8102e;
+    --crimson-deep:#7a0e1f;
+    --crimson-glow:#e8324f;
+    --paper:#eee7e1;
+    --muted:#a79c96;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+    --disp:'Space Grotesk', sans-serif;
+    --body:'Inter', sans-serif;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top right, rgba(200,16,46,0.10), transparent 55%),
+      var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--crimson-deep);color:var(--paper);}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* nav */
+  .nav{
+    position:sticky; top:0; z-index:10;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 28px;
+    background:rgba(11,11,13,0.82);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--ink-line);
+  }
+  .nav .brand{
+    font-family:var(--disp); font-weight:700; font-size:1.15rem;
+    letter-spacing:0.02em;
+  }
+  .nav .brand span{color:var(--crimson);}
+  .nav ul{list-style:none; display:flex; gap:28px; margin:0; padding:0;}
+  .nav a.navlink{
+    font-size:0.92rem; text-decoration:none; color:var(--muted);
+    transition:color .15s ease;
+  }
+  .nav a.navlink:hover, .nav a.navlink:focus-visible{color:var(--paper);}
+  .nav .icon-link{color:var(--muted); display:flex;}
+  .nav .icon-link:hover{color:var(--crimson-glow);}
+
+  /* hero */
+  .hero{
+    padding:88px 0 72px;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:center;
+  }
+  .tag{
+    display:inline-block; font-family:var(--mono); font-size:0.78rem;
+    color:var(--crimson-glow); border:1px solid var(--crimson-deep);
+    padding:4px 10px; border-radius:3px; margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:var(--disp); font-weight:700;
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
+    line-height:1.02; margin:0 0 22px;
+  }
+  .hero h1 .dash{color:var(--crimson);}
+  .hero p.lede{
+    font-size:1.08rem; color:var(--muted); max-width:46ch; margin:0 0 32px;
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--body); font-weight:500; font-size:0.95rem;
+    text-decoration:none; padding:12px 22px; border-radius:3px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn-solid{background:var(--crimson); color:var(--ink);}
+  .btn-solid:hover{background:var(--crimson-glow); transform:translateY(-1px);}
+  .btn-outline{border:1px solid var(--ink-line); color:var(--paper);}
+  .btn-outline:hover{border-color:var(--crimson); transform:translateY(-1px);}
+
+  /* whoami card */
+  .whoami{
+    background:var(--ink-raised); border:1px solid var(--ink-line);
+    border-radius:6px; overflow:hidden;
+  }
+  .whoami .bar{
+    display:flex; gap:6px; padding:12px 14px; border-bottom:1px solid var(--ink-line);
+  }
+  .whoami .dot{width:9px; height:9px; border-radius:50%; background:var(--ink-line);}
+  .whoami .dot.r{background:var(--crimson);}
+  .whoami .body{padding:20px 22px; font-family:var(--mono); font-size:0.86rem;}
+  .whoami .prompt{color:var(--crimson-glow); margin-bottom:14px;}
+  .whoami .row{display:flex; gap:10px; margin-bottom:10px; flex-wrap:wrap;}
+  .whoami .row:last-child{margin-bottom:0;}
+  .whoami .k{color:var(--muted); min-width:88px;}
+  .whoami .v{color:var(--paper);}
+
+  section{padding:64px 0; border-top:1px solid var(--ink-line);}
+  h2{
+    font-family:var(--disp); font-weight:600; font-size:1.7rem; margin:0 0 28px;
+  }
+
+  /* about */
+  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:48px;}
+  .about-grid p{color:var(--muted); max-width:62ch; margin:0 0 16px;}
+  .about-grid p strong{color:var(--paper); font-weight:500;}
+  .skill-block h3{
+    font-family:var(--mono); font-size:0.8rem; color:var(--muted);
+    display:flex; align-items:center; gap:8px; margin:0 0 12px;
+  }
+  .skill-block{margin-bottom:22px;}
+  .skill-block:last-child{margin-bottom:0;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-family:var(--mono); font-size:0.8rem; color:var(--paper);
+    border:1px solid var(--ink-line); padding:6px 12px; border-radius:3px;
+  }
+
+  /* project */
+  .project-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap:wrap; gap:10px; margin-bottom:24px;
+  }
+  .project-head .repo-link{
+    font-family:var(--mono); font-size:0.85rem; color:var(--muted);
+    text-decoration:none; border-bottom:1px dotted var(--ink-line);
+  }
+  .project-head .repo-link:hover{color:var(--crimson-glow);}
+  .release-card{
+    background:var(--ink-raised); border:1px solid var(--ink-line);
+    border-radius:6px; padding:28px 30px;
+  }
+  .release-card .rel-name{
+    font-family:var(--disp); font-size:1.3rem; font-weight:600; margin:0 0 6px;
+  }
+  .release-card .rel-meta{
+    font-family:var(--mono); font-size:0.78rem; color:var(--muted); margin-bottom:18px;
+  }
+  .release-card .rel-meta .rel-tag{
+    color:var(--crimson-glow); border:1px solid var(--crimson-deep);
+    padding:2px 8px; border-radius:3px; margin-right:10px;
+  }
+  .release-card .rel-body{
+    color:var(--muted); white-space:pre-wrap; margin:0 0 22px; max-width:70ch;
+  }
+  .assets{list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:8px;}
+  .assets li{
+    display:flex; align-items:center; justify-content:space-between;
+    border:1px solid var(--ink-line); border-radius:4px; padding:10px 14px;
+    font-family:var(--mono); font-size:0.82rem;
+  }
+  .assets a{color:var(--crimson-glow); text-decoration:none;}
+  .assets a:hover{text-decoration:underline;}
+  .assets .size{color:var(--muted);}
+  .state-msg{color:var(--muted); font-family:var(--mono); font-size:0.88rem;}
+
+  /* contact */
+  .contact-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;}
+  .contact-card{
+    border:1px solid var(--ink-line); border-radius:6px; padding:24px;
+    text-decoration:none; color:var(--paper);
+    display:flex; flex-direction:column; gap:14px;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .contact-card:hover{border-color:var(--crimson); background:rgba(200,16,46,0.06);}
+  .contact-card svg{width:26px; height:26px; color:var(--crimson-glow);}
+  .contact-card .label{font-family:var(--disp); font-weight:600; font-size:1.02rem;}
+  .contact-card .sub{color:var(--muted); font-size:0.86rem;}
+
+  footer{
+    border-top:1px solid var(--ink-line); padding:32px 0 48px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+  }
+  footer .fine{color:var(--muted); font-size:0.82rem; font-family:var(--mono);}
+  footer .icon-link{color:var(--muted); display:flex;}
+  footer .icon-link:hover{color:var(--crimson-glow);}
+
+  @media (max-width:820px){
+    .hero{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .nav ul{gap:16px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .btn:hover, .contact-card:hover{transform:none;}
+  }
+  :focus-visible{outline:2px solid var(--crimson-glow); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand">THUNDER<span>-</span>CODE</div>
+  <ul>
+    <li><a class="navlink" href="#about">About</a></li>
+    <li><a class="navlink" href="#project">Project</a></li>
+    <li><a class="navlink" href="#contact">Contact</a></li>
+  </ul>
+  <a class="icon-link" href="https://github.com/Shadow-zx" target="_blank" rel="noopener" aria-label="GitHub profile">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0C5.37 0 0 5.4 0 12.06c0 5.32 3.44 9.83 8.2 11.42.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.33-1.78-1.33-1.78-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.31-5.47-1.35-5.47-6a4.7 4.7 0 0 1 1.24-3.26c-.13-.31-.54-1.56.12-3.25 0 0 1.01-.33 3.3 1.24a11.3 11.3 0 0 1 6 0c2.29-1.57 3.3-1.24 3.3-1.24.66 1.69.25 2.94.12 3.25a4.7 4.7 0 0 1 1.24 3.26c0 4.66-2.81 5.68-5.49 5.98.43.38.81 1.12.81 2.27v3.36c0 .32.22.7.83.58C20.56 21.88 24 17.37 24 12.06 24 5.4 18.63 0 12 0Z"/></svg>
+  </a>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div>
+      <span class="tag">STATUS · BUILDING</span>
+      <h1>THUNDER<span class="dash">-</span>CODE</h1>
+      <p class="lede">I'm Parvez Hasan. Six months into code, still standing at the console. I build small things, break bigger ones, and keep a release page open on GitHub.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="#project">See the latest release</a>
+        <a class="btn btn-outline" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="whoami">
+      <div class="bar"><span class="dot r"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="body">
+        <div class="prompt">$ whoami</div>
+        <div class="row"><span class="k">languages</span><span class="v">Python, Java, Kotlin, C</span></div>
+        <div class="row"><span class="k">tools</span><span class="v">VS Code, IntelliJ IDEA, PyCharm</span></div>
+        <div class="row"><span class="k">experience</span><span class="v">~6 months, self-taught</span></div>
+        <div class="row"><span class="k">aiming for</span><span class="v">Apple, Microsoft (someday)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-grid">
+      <div>
+        <p>I'm <strong>Parvez Hasan</strong>, better known online as <strong>Thundercode</strong> — a developer about six months into this, teaching myself as I go. Most days that means Python scripts that half-work, some Java and Kotlin practice, and just enough C to remind me how much I still don't know.</p>
+        <p>The long-term goal sounds a little out there for someone this early: I'd like to end up writing code somewhere like <strong>Apple</strong> or <strong>Microsoft</strong> one day. No shortcuts planned — just building, shipping, and getting a bit better with every release.</p>
+      </div>
+      <div>
+        <div class="skill-block">
+          <h3>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+            Tools
+          </h3>
+          <div class="chips">
+            <span class="chip">VS Code</span>
+            <span class="chip">IntelliJ IDEA</span>
+            <span class="chip">PyCharm</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>Languages</h3>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">Kotlin</span>
+            <span class="chip">C</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="project-head">
+      <h2 style="margin:0;">Latest Release</h2>
+      <a class="repo-link" id="repoLink" href="https://github.com/Shadow-zx/Thundercode.github.io" target="_blank" rel="noopener">github.com/Shadow-zx/Thundercode.github.io</a>
+    </div>
+    <div class="release-card" id="releaseCard">
+      <p class="state-msg">Fetching the latest build…</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://discord.gg/epygQXmBfM" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.9-1.52.07.07 0 0 0-.08.04c-.21.38-.45.87-.61 1.26a18.3 18.3 0 0 0-5.49 0 12.6 12.6 0 0 0-.63-1.26.08.08 0 0 0-.08-.04c-1.7.29-3.36.8-4.9 1.52a.07.07 0 0 0-.03.03C.53 8.7-.32 12.9.1 17.06a.08.08 0 0 0 .03.06c2.06 1.52 4.06 2.44 6.02 3.05a.08.08 0 0 0 .09-.03c.46-.64.88-1.31 1.23-2.02a.08.08 0 0 0-.04-.11 13 13 0 0 1-1.87-.9.08.08 0 0 1-.01-.13c.13-.09.25-.19.37-.28a.08.08 0 0 1 .08-.01c3.93 1.8 8.18 1.8 12.06 0a.08.08 0 0 1 .08.01c.12.1.24.19.37.28a.08.08 0 0 1-.01.13c-.6.35-1.22.65-1.87.9a.08.08 0 0 0-.04.11c.36.71.78 1.38 1.23 2.02a.08.08 0 0 0 .09.03c1.97-.61 3.97-1.53 6.03-3.05a.08.08 0 0 0 .03-.06c.5-4.83-.83-9-3.53-12.66a.06.06 0 0 0-.03-.03ZM8.02 14.65c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.94 2.42-2.15 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.94 2.42-2.15 2.42Z"/></svg>
+        <div><div class="label">Discord</div><div class="sub">Join the server</div></div>
+      </a>
+      <a class="contact-card" href="https://wa.me/8801931533599" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.08-.15-.65-1.58-.9-2.16-.24-.58-.48-.5-.65-.5-.17 0-.37-.02-.56-.02-.2 0-.51.07-.78.37-.26.29-1.02 1-1.02 2.45s1.05 2.84 1.19 3.04c.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.7-.69 1.94-1.36.24-.66.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34Z"/><path d="M12.01 2C6.5 2 2.03 6.44 2.03 11.92c0 1.83.5 3.53 1.36 5L2 22l5.29-1.38a10 10 0 0 0 4.72 1.2h.01c5.5 0 9.97-4.44 9.97-9.92S17.51 2 12.01 2Zm0 18.14h-.01a8.25 8.25 0 0 1-4.2-1.15l-.3-.18-3.14.82.84-3.05-.2-.32a8.15 8.15 0 0 1-1.27-4.34c0-4.5 3.68-8.16 8.28-8.16 2.21 0 4.28.86 5.84 2.42a8.1 8.1 0 0 1 2.42 5.77c0 4.5-3.69 8.19-8.26 8.19Z"/></svg>
+        <div><div class="label">WhatsApp</div><div class="sub">Send a message</div></div>
+      </a>
+      <a class="contact-card" href="https://instagram.com/thundercode-xyz" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <div><div class="label">Instagram</div><div class="sub">@thundercode-xyz</div></div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="fine">© 2026 Thundercode · built with Python, Java, Kotlin, C and stubbornness.</span>
+    <a class="icon-link" href="https://github.com/Shadow-zx" target="_blank" rel="noopener" aria-label="GitHub profile">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.4 0 12.06c0 5.32 3.44 9.83 8.2 11.42.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.33-1.78-1.33-1.78-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.31-5.47-1.35-5.47-6a4.7 4.7 0 0 1 1.24-3.26c-.13-.31-.54-1.56.12-3.25 0 0 1.01-.33 3.3 1.24a11.3 11.3 0 0 1 6 0c2.29-1.57 3.3-1.24 3.3-1.24.66 1.69.25 2.94.12 3.25a4.7 4.7 0 0 1 1.24 3.26c0 4.66-2.81 5.68-5.49 5.98.43.38.81 1.12.81 2.27v3.36c0 .32.22.7.83.58C20.56 21.88 24 17.37 24 12.06 24 5.4 18.63 0 12 0Z"/></svg>
+    </a>
+  </footer>
+
+</div>
+
+<script>
+  // ---- Configure which repo's releases power the "Latest Release" section ----
+  // By default this points at the Pages repo itself. If your project's
+  // releases actually live in a different repository, change REPO below
+  // (e.g. "my-cool-app") and this section will pull from there instead.
+  const OWNER = "Shadow-zx";
+  const REPO  = "Thundercode.github.io";
+
+  const repoLinkEl = document.getElementById("repoLink");
+  repoLinkEl.href = `https://github.com/${OWNER}/${REPO}`;
+  repoLinkEl.textContent = `github.com/${OWNER}/${REPO}`;
+
+  function fmtBytes(bytes){
+    if (bytes < 1024) return bytes + " B";
+    if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + " KB";
+    return (bytes/(1024*1024)).toFixed(1) + " MB";
+  }
+  function fmtDate(iso){
+    const d = new Date(iso);
+    return d.toLocaleDateString(undefined, { year:"numeric", month:"long", day:"numeric" });
+  }
+  function escapeHtml(str){
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  async function loadRelease(){
+    const card = document.getElementById("releaseCard");
+    try {
+      const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/releases/latest`, {
+        headers: { "Accept": "application/vnd.github+json" }
+      });
+
+      if (res.status === 404) {
+        card.innerHTML = `<p class="state-msg">No releases published yet — check back soon, or <a href="https://github.com/${OWNER}/${REPO}" target="_blank" rel="noopener" style="color:var(--crimson-glow)">browse the repo</a>.</p>`;
+        return;
+      }
+      if (!res.ok) throw new Error("bad status " + res.status);
+
+      const rel = await res.json();
+      const name = rel.name || rel.tag_name || "Untitled release";
+      const body = rel.body ? escapeHtml(rel.body).slice(0, 900) : "No description was added for this release.";
+      const assets = rel.assets || [];
+
+      let assetsHtml = "";
+      if (assets.length){
+        assetsHtml = `<ul class="assets">` + assets.map(a =>
+          `<li><a href="${a.browser_download_url}" target="_blank" rel="noopener">${escapeHtml(a.name)}</a><span class="size">${fmtBytes(a.size)}</span></li>`
+        ).join("") + `</ul>`;
+      }
+
+      card.innerHTML = `
+        <div class="rel-name">${escapeHtml(name)}</div>
+        <div class="rel-meta"><span class="rel-tag">${escapeHtml(rel.tag_name || "")}</span>Published ${fmtDate(rel.published_at)}</div>
+        <p class="rel-body">${body}</p>
+        ${assetsHtml}
+        <a class="btn btn-outline" href="${rel.html_url}" target="_blank" rel="noopener">View full release on GitHub</a>
+      `;
+    } catch (err) {
+      card.innerHTML = `<p class="state-msg">Couldn't load the release right now — <a href="https://github.com/${OWNER}/${REPO}/releases" target="_blank" rel="noopener" style="color:var(--crimson-glow)">view it directly on GitHub</a>.</p>`;
+    }
+  }
+
+  loadRelease();
+</script>
+
+</body>
+</html>
